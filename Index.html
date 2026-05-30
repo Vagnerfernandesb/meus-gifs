@@ -1,1 +1,67 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Galeria de GIFs</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:20px;
+}
+
+h1{
+    text-align:center;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:white;
+    padding:10px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Minha Galeria de GIFs</h1>
+
+<div class="galeria" id="galeria"></div>
+
+<script>
+
+const gifs = [
+'gifs/gif001.gif',
+'gifs/gif002.gif',
+'gifs/gif003.gif'
+];
+
+const galeria = document.getElementById('galeria');
+
+gifs.forEach(gif=>{
+    galeria.innerHTML += `
+        <div class="card">
+            <img src="${gif}" loading="lazy">
+        </div>
+    `;
+});
+
+</script>
+
+</body>
+</html>
